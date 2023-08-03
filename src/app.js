@@ -86,7 +86,6 @@ function GenAleatoryCard() {
   // primera imagen
   const newI = document.createElement("i");
   newI.style.fontSize = "70px";
-  newI.style.color = "red";
   newI.classList.add("fa-solid");
   newI.classList.add(ArrCartas[tipo].icon);
 
@@ -97,9 +96,19 @@ function GenAleatoryCard() {
   const newIReverse = document.createElement("i");
   newIReverse.style.fontSize = "70px";
   newIReverse.classList.add("fa-solid");
-  newIReverse.style.color = "red";
   newIReverse.classList.add(ArrCartas[tipo].icon);
   newIReverse.style.transform = "rotate(-180deg)";
+
+  if (ObjetoCarta.tipo === "Corazones") {
+    newI.style.color = "red";
+    newIReverse.style.color = "red";
+  } else if (ObjetoCarta.tipo === "Diamantes") {
+    newIReverse.style.color = "red";
+    newI.style.color = "red";
+  } else {
+    newI.style.color = "black";
+    newIReverse.style.color = "black";
+  }
 
   secondIcon.appendChild(newIReverse);
   itemFocusReverse = newIReverse;
