@@ -6,23 +6,65 @@
     <title>Hello Rigo with Vanilla.js</title>
     <link
       rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
-      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
-      crossorigin="anonymous"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
-    <link rel="shortcut icon" href="./4geeks.ico" />
   </head>
-  <body>
+
+  <body class="bg-success">
     <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
+      <div class="row ">
+        <div
+          id="cartaPrincipal"
+          class="col-3 bg-light d-flex flex-column m-auto mt-3"
+          style="height: 500px; border-radius: 20px; box-shadow: 9px 16px 16px -8px rgba(0,0,0,0.75);
+          -webkit-box-shadow: 9px 16px 16px -8px rgba(0,0,0,0.75);
+          -moz-box-shadow: 9px 16px 16px -8px rgba(0,0,0,0.75);"
+        >
+          <div class="row " style="height: 25%;">
+            <div
+              class="col-4 d-flex justify-content-center align-items-center"
+              id="item-icon"
+              style="height: 100%;;"
+            ></div>
+          </div>
+          <div class="row" style="height: 50%;">
+            <div
+              class="col-12 d-flex justify-content-center align-items-center"
+            >
+              <h1 class="text-center" id="num" style="font-size: 100px;"></h1>
+            </div>
+          </div>
+          <div
+            class="row d-flex flex-row justify-content-end "
+            style="height: 25%;"
+          >
+            <div
+              class="col-4 d-flex justify-content-center align-items-center item-num-reverse"
+              id="item-icon-reverse"
+              style="height: 100%;;"
+            >
+              <img src="./assets/img/Corazon.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4 m-auto mt-5">
+          <form class="form-floating mb-3 row" onsubmit="GenerateCard(event)">
+            <div class="col-6">
+              <label for="inputAlto">Alto en pixeles</label>
+              <input type="text" class="form-control" id="inputAlto" placeholder="Ej:20px">
+            </div>
+            <div class="col-6">
+              <label for="inputAncho">Ancho en Pixeles</label>
+              <input type="text" class="form-control" id="inputAncho" placeholder="Ej:120px">
+            </div>
+            <div class="col-6 m-auto mt-3">
+              <button type="submit" class="btn btn-light" value="Generar Carta" id="buttonGen">Generar Carta</button>
+            </div>
+          </form>
+
+        
       </div>
     </div>
   </body>
